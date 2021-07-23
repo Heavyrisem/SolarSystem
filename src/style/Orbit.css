@@ -1,0 +1,16 @@
+.Orbit {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+
+	border: solid 1px rgba(212, 212, 212, 0.15);
+	border-radius: 100%;
+}
+
+@keyframes OrbitRotate {
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
