@@ -52,7 +52,7 @@ function Asteroidbelt(props: AsteroidbeltP) {
     const Style: React.CSSProperties = {
         width: props.radius+'rem',
         height: props.radius+'rem',
-	    background: 'rgba(0, 0, 0, 0)',
+	    // background: 'rgba(0, 0, 0, 0)',
         zIndex: 5
     }
     return (

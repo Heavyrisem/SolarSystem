@@ -4,10 +4,10 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 
-    border-radius: 100%;
+    /* border-radius: 100%; */
 
     
     /* --circle: 150px; */
-    -webkit-mask: radial-gradient(circle var(--circle), transparent 100%, #fff 100%);
-    mask: radial-gradient(circle var(--circle), transparent 100%, #fff 100%);
+    -webkit-mask: radial-gradient(circle var(--circle), transparent 90%, #fff 100%, transparent 120%);
+    mask: radial-gradient(circle var(--circle), transparent 90%, #fff 100%, transparent 120%);
 }

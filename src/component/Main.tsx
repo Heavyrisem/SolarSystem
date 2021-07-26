@@ -33,7 +33,7 @@ function Main() {
 					<Orbit radius={5 * Scale} size={0.950 * Scale} img={MoonSvg} orbitalCycleDay={27 / SpaceTime} origin={true} />
 				</Orbit>
 				<Orbit radius={38 * Scale} size={0.950*3.2 * Scale} img={MarsSvg} orbitalCycleDay={687 / SpaceTime} />
-				<Asteroidbelt radius={52 * Scale} size={10 * Scale} orbitalCycleDay={4343.5 / SpaceTime} />
+				<Asteroidbelt radius={55 * Scale} size={10 * Scale} orbitalCycleDay={4343.5 / SpaceTime} />
 				<Orbit radius={60 * Scale} size={0.950*5 * Scale} img={JupiterSvg} orbitalCycleDay={4380 / SpaceTime} />
 				<Orbit radius={70 * Scale} size={0.950*3 * Scale} img={SaturnSvg} orbitalCycleDay={10585 / SpaceTime} />
 				<Orbit radius={80 * Scale} size={0.950*4 * Scale} img={UranusSvg} orbitalCycleDay={30660 / SpaceTime} />
