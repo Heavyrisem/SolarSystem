@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../style/Planet.css';
 
 import Shadow from '../img/PlanetShadow.svg';
@@ -9,39 +9,45 @@ interface PlanetP {
     size: number,
     shadow?: boolean,
     orbitalCycleDay: number,
-    origin?: React.RefObject<HTMLImageElement>
+    origin?: boolean
 }
 function Planet(props: PlanetP) {
+    // const [FrameReq, setFrameReq] = useState<number>(-1);
+    let FrameReq = -1;
     let Rotation = 0;
-    let Speed = 360 / (props.orbitalCycleDay * 86400);
     const PlaRef = useRef<HTMLDivElement>(null);
-
+    
     function Rotate() {
-        if (props.origin?.current && PlaRef.current) {
+        if (PlaRef.current) {
+            let Speed = 360 / (props.orbitalCycleDay * 86400);
             Rotation += Speed;
             PlaRef.current.style.transform = ['translate(-50%, -50%)', `rotate(${Rotation}deg)`].join(' ')
+            FrameReq = (requestAnimationFrame(Rotate));
         }
-        requestAnimationFrame(Rotate);
     }
 
     useEffect(() => {
-        if (props.origin?.current) {
-            requestAnimationFrame(Rotate);
+        if (props.origin) {
+            FrameReq = (requestAnimationFrame(Rotate));
+            console.log("Update");
+            return () => {
+                console.log("Cancle", FrameReq);
+                cancelAnimationFrame(FrameReq);
+            }
         }
-    }, []);
+    }, [props]);
 
     const Style: React.CSSProperties = {
-        display: 'inline',
         // transform: ['translate(-50%, -50%)', `rotate(${Rotation}deg)`].join(' '),
         // animation: (!props.children)? `PlanetRotate infinite ${props.orbitalCycleDay * 86400 }s linear`:''
     }
     
     return (
-        <div style={Style} className="Planet" ref={PlaRef}>
-            <img src={props.img} style={{width: props.size+'rem'}} />
-            {!props.shadow&&
+        <div className="Planet" ref={PlaRef} style={{width: props.size+'rem'}}>
+            <img src={props.img} style={{width: props.size+'rem', height: props.size+'rem'}} />
+            {/* {props.shadow&&
                 <img className="Planet Shadow" src={Shadow} style={{width: props.size+'rem', transform: 'translate(-50%)'}} />
-            }
+            } */}
             {props.children}
         </div>
     )

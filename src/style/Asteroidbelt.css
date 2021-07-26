@@ -1,0 +1,13 @@
+.Asteroidbelt {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+    border-radius: 100%;
+
+    
+    /* --circle: 150px; */
+    -webkit-mask: radial-gradient(circle var(--circle), transparent 100%, #fff 100%);
+    mask: radial-gradient(circle var(--circle), transparent 100%, #fff 100%);
+}

@@ -6,10 +6,18 @@ html, body, #root {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	height: 100vh;
+	overflow: hidden;
 }
 
 #root {
 	display: flex;
 	vertical-align: middle;
 	text-align: center;
+}
+
+.FPS {
+	position: absolute;
+	z-index: 9;
+	color: white;
+	/* color: rgba(223, 223, 223, 0.8); */
 }

@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a8297b62.chunk.css",
+    "main.js": "/static/js/main.e9e88265.chunk.js",
+    "main.js.map": "/static/js/main.e9e88265.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b16cd0fb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b16cd0fb.js.map",
+    "static/js/2.33da2e79.chunk.js": "/static/js/2.33da2e79.chunk.js",
+    "static/js/2.33da2e79.chunk.js.map": "/static/js/2.33da2e79.chunk.js.map",
+    "static/js/3.0dbbaaf0.chunk.js": "/static/js/3.0dbbaaf0.chunk.js",
+    "static/js/3.0dbbaaf0.chunk.js.map": "/static/js/3.0dbbaaf0.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.a8297b62.chunk.css.map": "/static/css/main.a8297b62.chunk.css.map",
+    "static/js/2.33da2e79.chunk.js.LICENSE.txt": "/static/js/2.33da2e79.chunk.js.LICENSE.txt",
+    "static/media/EarthShadow.d32d1818.svg": "/static/media/EarthShadow.d32d1818.svg",
+    "static/media/JupiterShadow.08a0f6c7.svg": "/static/media/JupiterShadow.08a0f6c7.svg",
+    "static/media/MarsShadow.003c95ea.svg": "/static/media/MarsShadow.003c95ea.svg",
+    "static/media/MercuryShadow.140bd3c2.svg": "/static/media/MercuryShadow.140bd3c2.svg",
+    "static/media/MoonShadow.6188f2fa.svg": "/static/media/MoonShadow.6188f2fa.svg",
+    "static/media/NeptuneShadow.e0e09804.svg": "/static/media/NeptuneShadow.e0e09804.svg",
+    "static/media/SaturnShadow.8e44fdb4.svg": "/static/media/SaturnShadow.8e44fdb4.svg",
+    "static/media/Solar.a8b62947.svg": "/static/media/Solar.a8b62947.svg",
+    "static/media/UranusShadow.c2a8405b.svg": "/static/media/UranusShadow.c2a8405b.svg",
+    "static/media/VenusShadow.ccc19caf.svg": "/static/media/VenusShadow.ccc19caf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b16cd0fb.js",
+    "static/js/2.33da2e79.chunk.js",
+    "static/css/main.a8297b62.chunk.css",
+    "static/js/main.e9e88265.chunk.js"
+  ]
+}

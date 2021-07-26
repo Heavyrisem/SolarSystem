@@ -17,16 +17,19 @@ function Starfield() {
             for (let i = 0; i < Stars; i++) {
                 let x = Math.random() * CanvasRef.current.offsetWidth;
                 let y = Math.random() * CanvasRef.current.offsetHeight;
-                context.fillStyle = "white";
-                context.fillRect(x,y,1,1);
+                let radius = Math.random() * 1.1;
+                context.beginPath();
+                context.arc(x, y, radius, 0, 360);
+                context.fillStyle = "rgba(223, 223, 223, 0.8)";
+                context.fill();
             }
 
         }
     }, []);
 
     return (
-        <canvas className="Starfield" width={window.screen.width} height={window.screen.height} style={Style} ref={CanvasRef}>
-
+        <canvas className="Starfield" width={document.body.offsetWidth} height={document.body.offsetHeight} style={Style} ref={CanvasRef}>
+            
         </canvas>
     )       
 }
