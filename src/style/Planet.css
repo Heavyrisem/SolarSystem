@@ -4,11 +4,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.Planet img {
-    max-width: none;
-    display: block;
-    margin: 0px auto;
-}
 .Planet.Shadow {
     /* height: 100%; */
     /* position: static; */
