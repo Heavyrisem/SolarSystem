@@ -7,7 +7,7 @@ function Starfield() {
     const Stars = 500;
 
     const Style: React.CSSProperties = {
-	    background: '#1a1d2c'
+	    background: ''
     }
 
     useEffect(() => {
@@ -28,7 +28,7 @@ function Starfield() {
     }, []);
 
     return (
-        <canvas className="Starfield" width={document.body.offsetWidth} height={document.body.offsetHeight} style={Style} ref={CanvasRef}>
+        <canvas className="Starfield" width={document.body.offsetWidth} height={document.body.offsetHeight} ref={CanvasRef}>
             
         </canvas>
     )       

@@ -3,4 +3,5 @@
     height: 100vh;
     /* display: block; */
     position: absolute;
+    background: radial-gradient( at 50% 70%, #262f52, #1a1d2c )
 }
