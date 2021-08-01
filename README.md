@@ -1,46 +1,19 @@
-# Getting Started with Create React App
+# SolarSystem
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+태양계를 구현한 웹 어플리케이션입니다.
 
-## Available Scripts
+## Structure
+그림 툴의 Layer와 비슷한 구조로 행성을 하나씩 겹쳐 쌓는 구조입니다.
 
-In the project directory, you can run:
+Orbit(궤도), Planet(행성) 두개의 컴포넌트로 구성되며 Orbit의 자식으로 Orbit을 지정하여
 
-### `npm start`
+행성을 중심으로 공전하는 위성을 지정할 수 있습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Orbit 컴포넌트에 origin 속성을 지정하면 행성이 공전하는 만큼 반대로 자전하게 됩니다.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+위성의 그림자가 태양에 그려지는 것처럼 자연스럽게 표현 가능합니다.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Animation
+끊기지 않는 자연스러운 움직임과 모니터의 주사율에 맞춰 동작이 가능한
+requestAnimationFrame 메소드를 사용했습니다.
