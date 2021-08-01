@@ -17,3 +17,6 @@ Orbit 컴포넌트에 origin 속성을 지정하면 행성이 공전하는 만�
 ### Animation
 끊기지 않는 자연스러운 움직임과 모니터의 주사율에 맞춰 동작이 가능한
 requestAnimationFrame 메소드를 사용했습니다.
+
+## Rotation
+SpaceTime값을 1로 설정할 경우 실제 행성들의 공전 주기를 가집니다. ex) 지구의 공전 주기 = 365일
