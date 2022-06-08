@@ -1,64 +1,69 @@
-import React, { useEffect, useRef, useState } from "react";
-import '../style/Asteroidbelt.css';
+import React, { useEffect, useRef } from "react";
+import useRotationAnim from "../hooks/useRotateAnim";
+import "../style/Asteroidbelt.css";
 
-interface AsteroidbeltP {
-    radius: number
-    size: number,
-    orbitalCycleDay: number
+interface AsteroidbeltProps {
+  radius: number;
+  size: number;
+  orbitalCycleDay: number;
 }
-function Asteroidbelt(props: AsteroidbeltP) {
-    const CanvasRef = useRef<HTMLCanvasElement>(null);
-    let FrameReq = -1;
-    let Rotation = 0;
-    let Speed = 360 / (props.orbitalCycleDay * 86400);
+const Asteroidbelt: React.FC<AsteroidbeltProps> = ({
+  radius,
+  size,
+  orbitalCycleDay,
+}) => {
+  const CanvasRef = useRef<HTMLCanvasElement>(null);
 
-    useEffect(() => {
-        FrameReq = (requestAnimationFrame(Rotate));
-        return () => {
-            console.log("Cancle", FrameReq);
-            cancelAnimationFrame(FrameReq);
-        }
-    }, [props.orbitalCycleDay]);
+  const { style } = useRotationAnim({
+    orbitalCycleDay,
+    style: {
+      width: radius + "rem",
+      height: radius + "rem",
+      zIndex: 5,
+      transform: "translate(-50%, -50%)",
+    },
+  });
 
-    useEffect(() => {
-        if (CanvasRef.current) {
-            console.log("Draw", CanvasRef.current);
-            let context = CanvasRef.current.getContext("2d") as CanvasRenderingContext2D;
-            context.fillStyle = "white";
-            for (let i = 0; i < 1000; i++) {
-                let x = Math.random() * CanvasRef.current.offsetWidth;
-                let y = Math.random() * CanvasRef.current.offsetHeight;
-                let radius = Math.random() * 2;
-                context.beginPath();
-                context.arc(x, y, radius, 0, 360);
-                context.fillStyle = "rgba(223, 223, 223, 0.5)";
-                context.fill();
-                // context.fillRect(x,y,1,1);
-            }
-            CanvasRef.current.style.setProperty("--circle", `${(RemToPx(props.radius) - RemToPx(props.size)) / 2}px`);
-        }
-    }, [props.size]);
+  useEffect(() => {
+    const { current: canvas } = CanvasRef;
 
-    function Rotate() {
-        if (CanvasRef.current) 
-            CanvasRef.current.style.transform = ['translate(-50%, -50%)', `rotate(${Rotation -= Speed}deg)`].join(' ')
-            FrameReq = (requestAnimationFrame(Rotate));
+    if (canvas) {
+      console.log("Draw", canvas);
+      let context = canvas.getContext("2d") as CanvasRenderingContext2D;
+
+      context.fillStyle = "white";
+
+      for (let i = 0; i < 1000; i++) {
+        let x = Math.random() * canvas.offsetWidth;
+        let y = Math.random() * canvas.offsetHeight;
+        let radius = Math.random() * 2;
+        context.beginPath();
+        context.arc(x, y, radius, 0, 360);
+        context.fillStyle = "rgba(223, 223, 223, 0.5)";
+        context.fill();
+        // context.fillRect(x,y,1,1);
+      }
+
+      canvas.style.setProperty(
+        "--circle",
+        `${(RemToPx(radius) - RemToPx(size)) / 2}px`
+      );
     }
+  }, [radius, size]);
 
-    function RemToPx(n: number): number {
-        return n * parseFloat(getComputedStyle(document.documentElement).fontSize);
-    }
+  function RemToPx(n: number): number {
+    return n * parseFloat(getComputedStyle(document.documentElement).fontSize);
+  }
 
-    const Style: React.CSSProperties = {
-        width: props.radius+'rem',
-        height: props.radius+'rem',
-	    // background: 'rgba(0, 0, 0, 0)',
-        zIndex: 5
-    }
-    return (
-        <canvas className="Asteroidbelt" ref={CanvasRef} style={Style} width={RemToPx(props.radius)} height={RemToPx(props.radius)}>
-        </canvas>
-    )
-}
+  return (
+    <canvas
+      className="Asteroidbelt"
+      ref={CanvasRef}
+      style={style}
+      width={RemToPx(radius)}
+      height={RemToPx(radius)}
+    ></canvas>
+  );
+};
 
 export default Asteroidbelt;
