@@ -12,7 +12,7 @@ const Asteroidbelt: React.FC<AsteroidbeltProps> = ({
   size,
   orbitalCycleDay,
 }) => {
-  const CanvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const { style } = useRotationAnim({
     orbitalCycleDay,
@@ -25,7 +25,7 @@ const Asteroidbelt: React.FC<AsteroidbeltProps> = ({
   });
 
   useEffect(() => {
-    const { current: canvas } = CanvasRef;
+    const { current: canvas } = canvasRef;
 
     if (canvas) {
       console.log("Draw", canvas);
@@ -58,7 +58,7 @@ const Asteroidbelt: React.FC<AsteroidbeltProps> = ({
   return (
     <canvas
       className="Asteroidbelt"
-      ref={CanvasRef}
+      ref={canvasRef}
       style={style}
       width={RemToPx(radius)}
       height={RemToPx(radius)}

@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import "../style/Planet.css";
 
-interface PlanetP {
+interface PlanetProps {
   children?: any;
   img: string;
   size: number;
@@ -9,7 +9,7 @@ interface PlanetP {
   orbitalCycleDay: number;
   origin?: boolean;
 }
-const Planet: React.FC<PlanetP> = ({ children, img, size }) => {
+const Planet: React.FC<PlanetProps> = ({ children, img, size }) => {
   const rootStyle = useMemo(
     () => ({
       width: `${size}rem`,

@@ -15,84 +15,84 @@ import NpetuneSvg from "../img/NeptuneShadow.svg";
 import Config from "./Config";
 import Solar from "./Solar";
 
-function Main() {
-  const [SpaceTime, setSpaceTime] = useState<number>(10000);
-  const [Scale, setScale] = useState<number>(0.6);
+const Main: React.FC = () => {
+  const [spaceTime, setSpaceTime] = useState<number>(10000);
+  const [scale, setScale] = useState<number>(0.6);
 
   return (
     <>
       <Config
-        SpaceTime={SpaceTime}
+        SpaceTime={spaceTime}
         setSpaceTime={setSpaceTime}
-        Scale={Scale}
+        Scale={scale}
         setScale={setScale}
       />
       <Starfield />
-      <Solar size={4 * Scale}>
+      <Solar size={4 * scale}>
         <Orbit
-          radius={8 * Scale}
-          size={0.95 * Scale}
+          radius={8 * scale}
+          size={0.95 * scale}
           img={MercurySvg}
-          orbitalCycleDay={88 / SpaceTime}
+          orbitalCycleDay={88 / spaceTime}
         />
         <Orbit
-          radius={15 * Scale}
-          size={0.95 * 1.5 * Scale}
+          radius={15 * scale}
+          size={0.95 * 1.5 * scale}
           img={VenusSvg}
-          orbitalCycleDay={225 / SpaceTime}
+          orbitalCycleDay={225 / spaceTime}
         />
         <Orbit
-          radius={23 * Scale}
-          size={0.95 * 1.6 * Scale}
+          radius={23 * scale}
+          size={0.95 * 1.6 * scale}
           img={EarthSvg}
-          orbitalCycleDay={365 / SpaceTime}
+          orbitalCycleDay={365 / spaceTime}
         >
           <Orbit
-            radius={5 * Scale}
-            size={0.95 * Scale}
+            radius={5 * scale}
+            size={0.95 * scale}
             img={MoonSvg}
-            orbitalCycleDay={27 / SpaceTime}
+            orbitalCycleDay={27 / spaceTime}
             origin={true}
           />
         </Orbit>
         <Orbit
-          radius={38 * Scale}
-          size={0.95 * 3.2 * Scale}
+          radius={38 * scale}
+          size={0.95 * 3.2 * scale}
           img={MarsSvg}
-          orbitalCycleDay={687 / SpaceTime}
+          orbitalCycleDay={687 / spaceTime}
         />
         <Asteroidbelt
-          radius={55 * Scale}
-          size={10 * Scale}
-          orbitalCycleDay={4343.5 / SpaceTime}
+          radius={55 * scale}
+          size={10 * scale}
+          orbitalCycleDay={4343.5 / spaceTime}
         />
         <Orbit
-          radius={60 * Scale}
-          size={0.95 * 5 * Scale}
+          radius={60 * scale}
+          size={0.95 * 5 * scale}
           img={JupiterSvg}
-          orbitalCycleDay={4380 / SpaceTime}
+          orbitalCycleDay={4380 / spaceTime}
         />
         <Orbit
-          radius={70 * Scale}
-          size={0.95 * 3 * Scale}
+          radius={70 * scale}
+          size={0.95 * 3 * scale}
           img={SaturnSvg}
-          orbitalCycleDay={10585 / SpaceTime}
+          orbitalCycleDay={10585 / spaceTime}
         />
         <Orbit
-          radius={80 * Scale}
-          size={0.95 * 4 * Scale}
+          radius={80 * scale}
+          size={0.95 * 4 * scale}
           img={UranusSvg}
-          orbitalCycleDay={30660 / SpaceTime}
+          orbitalCycleDay={30660 / spaceTime}
         />
         <Orbit
-          radius={90 * Scale}
-          size={0.95 * 3.5 * Scale}
+          radius={90 * scale}
+          size={0.95 * 3.5 * scale}
           img={NpetuneSvg}
-          orbitalCycleDay={60225 / SpaceTime}
+          orbitalCycleDay={60225 / spaceTime}
         />
       </Solar>
     </>
   );
-}
+};
 
 export default Main;
